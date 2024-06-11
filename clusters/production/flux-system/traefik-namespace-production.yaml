@@ -6,9 +6,8 @@ metadata:
 spec:
   interval: 10m
   path: "./apps/traefik/production"
+  prune: true
   sourceRef:
     kind: GitRepository
-    name: my-repo
+    name: my-repo # Make sure this GitRepository exists and is accessible
   targetNamespace: traefik
-  prune: true
-  validation: client
