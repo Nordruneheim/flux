@@ -1,14 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: traefik-namespace-production
+  name: traefik-production
   namespace: flux-system
 spec:
-  interval: 5m
-  path: "./apps/traefik/production"
-  prune: true
+  interval: 10m
+  path: "./apps/traefik/production" # Adjust this path if your Traefik configs are elsewhere
   sourceRef:
     kind: GitRepository
-    name: my-repo
+    name: my-repo # This should match the GitRepository metadata.name
   targetNamespace: traefik
-  timeout: 2m
+  prune: true
+  validation: client
