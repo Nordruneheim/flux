@@ -5,10 +5,10 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  path: "./apps/traefik/production" # Adjust this path if your Traefik configs are elsewhere
+  path: "./apps/traefik/production"
   sourceRef:
     kind: GitRepository
-    name: my-repo # This should match the GitRepository metadata.name
+    name: my-repo
   targetNamespace: traefik
   prune: true
   validation: client
